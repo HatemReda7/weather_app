@@ -27,14 +27,14 @@ class ConditionItem extends StatelessWidget {
               color: Colors.white,
             ),
             SizedBox(
-              height: 25.h,
+              height: 15.h,
             ),
             Text(
               "${currentTemp.toString().substring(0, 2)} C",
               style: largeText,
             ),
             SizedBox(
-              height: 25.h,
+              height: 10.h,
             ),
             Text(
               currentCondition.toString(),

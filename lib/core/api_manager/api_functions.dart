@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../utils/constants.dart';
+import 'api_models/SearchResult.dart';
 import 'api_models/WeatherModel.dart';
 
 class ApiFunction{
@@ -17,7 +18,7 @@ class ApiFunction{
     return data;
   }
 
-  static Future<WeatherModel> searchWeather({required String q}) async {
+  static Future<SearchResult> searchWeather({required String q}) async {
     Uri url = Uri.https(baseUrl, "/v1/search.json", {
       "accept": "application/json",
       "key": apiKey,
@@ -25,7 +26,7 @@ class ApiFunction{
     });
     http.Response response = await http.get(url);
     var jsonData = jsonDecode(response.body);
-    WeatherModel data = WeatherModel.fromJson(jsonData);
+    SearchResult data = SearchResult.fromJson(jsonData);
     return data;
   }
 }

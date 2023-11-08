@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:weather/core/api_manager/api_functions.dart';
 import 'package:weather/core/utils/styles.dart';
+
+import '../../../../core/Provider/my_provider.dart';
 
 class LastUpdatedText extends StatelessWidget {
   const LastUpdatedText({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<MyProvider>(context);
     return FutureBuilder(
-      future: ApiFunction.getWeatherResults(q: "cairo"),
+      future: ApiFunction.getWeatherResults(q: pro.search),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());

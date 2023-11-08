@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:weather/core/api_manager/api_functions.dart';
 import 'package:weather/core/utils/styles.dart';
+
+import '../../../../core/Provider/my_provider.dart';
 
 class LocationItem extends StatelessWidget {
   String search;
@@ -10,8 +13,9 @@ class LocationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<MyProvider>(context);
     return FutureBuilder(
-      future: ApiFunction.getWeatherResults(q: "cairo"),
+      future: ApiFunction.getWeatherResults(q: pro.search),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -26,6 +30,7 @@ class LocationItem extends StatelessWidget {
         var dt = DateTime.fromMillisecondsSinceEpoch(dateEpoch);
         var d12 = DateFormat('hh:mm a').format(dt);
         return Container(
+          width: 330,
           padding: EdgeInsets.all(12.r),
           decoration: BoxDecoration(
             color: Colors.white,

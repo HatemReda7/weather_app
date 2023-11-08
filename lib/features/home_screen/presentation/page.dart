@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:weather/features/home_screen/presentation/widgets/center_container.dart';
 import 'package:weather/features/home_screen/presentation/widgets/condition_item.dart';
 import 'package:weather/features/home_screen/presentation/widgets/last%20updated%20text.dart';
 import 'package:weather/features/home_screen/presentation/widgets/location_item.dart';
 import 'package:weather/features/home_screen/presentation/widgets/search_bar.dart';
+
+import '../../../core/Provider/my_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = "HomeScreen";
@@ -14,6 +17,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<MyProvider>(context);
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       extendBody: true,
@@ -21,7 +25,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
-        toolbarHeight: 100,
+        toolbarHeight: 90,
         title: CustomTextField(controller: controller,hint: "Search"),
         elevation: 0,
       ),
@@ -29,10 +33,11 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            LocationItem(controller.text),
+            SizedBox(height: 10.h,),
+            LocationItem(pro.search),
             ConditionItem(),
             SizedBox(
-              height: 30.h,
+              height: 20.h,
             ),
             CenterContainer(),
             SizedBox(height: 20.h,),

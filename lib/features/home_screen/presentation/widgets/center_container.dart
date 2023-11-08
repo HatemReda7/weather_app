@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import '../../../../core/Provider/my_provider.dart';
 import '../../../../core/api_manager/api_functions.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/utils/styles.dart';
@@ -9,8 +11,9 @@ class CenterContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<MyProvider>(context);
     return FutureBuilder(
-      future: ApiFunction.getWeatherResults(q: "Cairo"),
+      future: ApiFunction.getWeatherResults(q: pro.search),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());

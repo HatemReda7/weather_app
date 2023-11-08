@@ -1,8 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:weather/core/api_manager/api_functions.dart';
-import '../../../../core/api_manager/api_models/WeatherModel.dart';
+import '../../../../core/Provider/my_provider.dart';
+import '../../../../core/api_manager/api_models/SearchResult.dart';
 import '../../../../core/utils/styles.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -16,6 +18,7 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<MyProvider>(context);
     return TextField(
       controller: controller,
       style: mediumText.copyWith(fontSize: 18,color: Colors.black,fontWeight: FontWeight.w300),
@@ -36,10 +39,7 @@ class CustomTextField extends StatelessWidget {
         hintStyle: smallText2.copyWith(fontSize: 18,color: Colors.black.withOpacity(.41)),
       ),
       onChanged: (value) async{
-        Location searchList = Location();
-        // ApiFunction.searchWeather(q: controller.text);
-        WeatherModel data = await ApiFunction.searchWeather(q: controller.text);
-        searchList = data.location ?? Location();
+        pro.changeSearched(controller.text);
       },
     );
   }

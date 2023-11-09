@@ -40,6 +40,7 @@ class LocationItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Location:  $locationName, $locationCountry",style: smallText,),
+              SizedBox(height: 10.h,),
               Text("Local Time:  ${date.toString().substring(0,10)}  $d12",style: smallText,)
             ],
           ),

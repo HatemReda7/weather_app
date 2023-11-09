@@ -2,9 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:weather/core/api_manager/api_functions.dart';
 import '../../../../core/Provider/my_provider.dart';
-import '../../../../core/api_manager/api_models/SearchResult.dart';
 import '../../../../core/utils/styles.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -21,7 +19,7 @@ class CustomTextField extends StatelessWidget {
     var pro=Provider.of<MyProvider>(context);
     return TextField(
       controller: controller,
-      style: mediumText.copyWith(fontSize: 18,color: Colors.black,fontWeight: FontWeight.w300),
+      style: mediumText.copyWith(fontSize: 16,color: Colors.black,fontWeight: FontWeight.w300),
       decoration: InputDecoration(
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30.r),
@@ -35,10 +33,16 @@ class CustomTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(30.r),
             borderSide: BorderSide(color: Colors.black)),
         prefixIcon: const Icon(Icons.search, color: Colors.black),
+        suffix: InkWell(
+            onTap: () {
+              controller.clear();
+              pro.changeSearched("cairo");
+            },
+            child: Text("Clear!",)),
         hintText: hint,
         hintStyle: smallText2.copyWith(fontSize: 18,color: Colors.black.withOpacity(.41)),
       ),
-      onChanged: (value) async{
+      onSubmitted: (value) {
         pro.changeSearched(controller.text);
       },
     );

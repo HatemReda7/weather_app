@@ -7,7 +7,7 @@ class PrefsHelper{
     return prefs.getString("Search");
   }
 
-  static saveSearch(String lang)async{
-    await prefs.setString("Search", lang);
+  static saveSearch(String search)async{
+    await prefs.setString("Search", search);
   }
 }

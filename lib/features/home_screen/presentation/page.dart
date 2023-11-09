@@ -33,14 +33,15 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 10.h,),
+            SizedBox(height: 5.h,),
             LocationItem(pro.search),
+            SizedBox(height: 10.h,),
             ConditionItem(),
             SizedBox(
               height: 20.h,
             ),
             CenterContainer(),
-            SizedBox(height: 20.h,),
+            SizedBox(height: 15.h,),
             LastUpdatedText()
           ],
         ),

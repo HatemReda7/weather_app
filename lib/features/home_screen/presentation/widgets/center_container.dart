@@ -35,7 +35,7 @@ class CenterContainer extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 16.h),
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(12)),
-                color: Colors.white),
+                color: Colors.white54),
             child: Column(
               children: [
                 Row(

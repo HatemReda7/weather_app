@@ -24,17 +24,4 @@ class SearchResult {
   double? lat;
   double? lon;
   String? url;
-
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['id'] = id;
-    map['name'] = name;
-    map['region'] = region;
-    map['country'] = country;
-    map['lat'] = lat;
-    map['lon'] = lon;
-    map['url'] = url;
-    return map;
-  }
-
 }

@@ -26,9 +26,6 @@ class LocationItem extends StatelessWidget {
         var locationName =snapshot.data?.location?.name ?? "";
         var locationCountry =snapshot.data?.location?.country ?? "";
         var date =snapshot.data?.location?.localtime ?? "";
-        var dateEpoch =snapshot.data?.location?.localtimeEpoch ??0;
-        var dt = DateTime.fromMillisecondsSinceEpoch(dateEpoch);
-        var d12 = DateFormat('hh:mm a').format(dt);
         return Container(
           width: 330,
           padding: EdgeInsets.all(12.r),
@@ -41,7 +38,7 @@ class LocationItem extends StatelessWidget {
             children: [
               Text("Location:  $locationName, $locationCountry",style: smallText,),
               SizedBox(height: 10.h,),
-              Text("Local Time:  ${date.toString().substring(0,10)}  $d12",style: smallText,)
+              Text("Local Time:  $date",style: smallText,)
             ],
           ),
         );

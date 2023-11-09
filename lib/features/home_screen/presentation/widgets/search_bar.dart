@@ -6,12 +6,9 @@ import '../../../../core/Provider/my_provider.dart';
 import '../../../../core/utils/styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  final TextEditingController controller;
-  final String hint;
-  const CustomTextField({
+  final TextEditingController controller= TextEditingController();
+  CustomTextField({
     Key? key,
-    required this.controller,
-    required this.hint,
   }) : super(key: key);
 
   @override
@@ -23,23 +20,23 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30.r),
-            borderSide: BorderSide(color: Colors.black)),
+            borderSide: const BorderSide(color: Colors.black)),
         filled: true,
         fillColor: Colors.white,
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30.r),
-            borderSide: BorderSide(color: Colors.black)),
+            borderSide: const BorderSide(color: Colors.black)),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30.r),
-            borderSide: BorderSide(color: Colors.black)),
+            borderSide: const BorderSide(color: Colors.black)),
         prefixIcon: const Icon(Icons.search, color: Colors.black),
         suffix: InkWell(
             onTap: () {
               controller.clear();
               pro.changeSearched("cairo");
             },
-            child: Text("Clear!",)),
-        hintText: hint,
+            child: const Text("Clear!",)),
+        hintText: "Enter Location",
         hintStyle: smallText2.copyWith(fontSize: 18,color: Colors.black.withOpacity(.41)),
       ),
       onSubmitted: (value) {

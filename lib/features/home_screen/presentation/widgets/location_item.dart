@@ -8,8 +8,8 @@ import 'package:weather/core/utils/styles.dart';
 import '../../../../core/Provider/my_provider.dart';
 
 class LocationItem extends StatelessWidget {
-  String search;
-  LocationItem(this.search,{super.key});
+  final String search;
+  const LocationItem(this.search,{super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../utils/constants.dart';
-import 'api_models/SearchResult.dart';
-import 'api_models/WeatherModel.dart';
+import 'api_models/search_result.dart';
+import 'api_models/weather_model.dart';
 
 class ApiFunction{
 

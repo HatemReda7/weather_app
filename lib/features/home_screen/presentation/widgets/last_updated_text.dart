@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:weather/core/api_manager/api_functions.dart';
 import 'package:weather/core/utils/styles.dart';
-
 import '../../../../core/Provider/my_provider.dart';
 
 class LastUpdatedText extends StatelessWidget {

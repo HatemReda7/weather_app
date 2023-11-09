@@ -51,7 +51,7 @@ class ConditionItem extends StatelessWidget {
       return Image.asset(sunny);
     }else if(weatherCondition=="Light rain" || weatherCondition=="Rain" || weatherCondition=="Patchy rain possible"){
       return Image.asset(rainy);
-    }else if(weatherCondition=="Overcast" ){
+    }else if(weatherCondition=="Overcast" || weatherCondition=="Partly cloudy" ){
       return Image.asset(cloudy);
     }else{
       return Icon(

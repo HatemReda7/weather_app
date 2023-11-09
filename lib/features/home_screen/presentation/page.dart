@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:weather/features/home_screen/presentation/widgets/center_container.dart';
 import 'package:weather/features/home_screen/presentation/widgets/condition_item.dart';
-import 'package:weather/features/home_screen/presentation/widgets/last%20updated%20text.dart';
+import 'package:weather/features/home_screen/presentation/widgets/last_updated_text.dart';
 import 'package:weather/features/home_screen/presentation/widgets/location_item.dart';
 import 'package:weather/features/home_screen/presentation/widgets/search_bar.dart';
 
@@ -12,8 +12,7 @@ import '../../../core/Provider/my_provider.dart';
 class HomeScreen extends StatelessWidget {
   static const String routeName = "HomeScreen";
 
-  HomeScreen({super.key});
-  TextEditingController controller=TextEditingController();
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         centerTitle: true,
         toolbarHeight: 90,
-        title: CustomTextField(controller: controller,hint: "Search"),
+        title: CustomTextField(),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -36,13 +35,13 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: 5.h,),
             LocationItem(pro.search),
             SizedBox(height: 10.h,),
-            ConditionItem(),
+            const ConditionItem(),
             SizedBox(
               height: 20.h,
             ),
-            CenterContainer(),
+            const CenterContainer(),
             SizedBox(height: 15.h,),
-            LastUpdatedText()
+            const LastUpdatedText()
           ],
         ),
       )

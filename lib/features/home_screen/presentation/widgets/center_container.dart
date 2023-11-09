@@ -58,7 +58,7 @@ class CenterContainer extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ImageIcon(AssetImage(umbrella),size: 30.r,color: Colors.pinkAccent,),
+                        ImageIcon(const AssetImage(umbrella),size: 30.r,color: Colors.pinkAccent,),
                         Text("Perception", style: smallText,),
                         Text("$currentPerc %",style: smallText2),
                       ],
@@ -69,7 +69,7 @@ class CenterContainer extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ImageIcon(AssetImage(wind),size: 30.r,color: Colors.lightBlue,),
+                        ImageIcon(const AssetImage(wind),size: 30.r,color: Colors.lightBlue,),
                         Text("Wind", style: smallText,),
                         Text("$currentWind Km/H",style: smallText2),
                       ],
@@ -77,7 +77,7 @@ class CenterContainer extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 20.h,),
-                Divider(color: Colors.blue,thickness: 2,endIndent: 20,indent: 20,),
+                const Divider(color: Colors.blue,thickness: 2,endIndent: 20,indent: 20,),
                 SizedBox(height: 20.h,),
                 Row(
                   mainAxisSize: MainAxisSize.min,
@@ -85,7 +85,7 @@ class CenterContainer extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ImageIcon(AssetImage(temp),size: 30.r,color: Colors.amber,),
+                        ImageIcon(const AssetImage(temp),size: 30.r,color: Colors.amber,),
                         Text(
                           "Feels like",
                           style: smallText,
@@ -99,7 +99,7 @@ class CenterContainer extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ImageIcon(AssetImage(direction),size: 30.r,color: Colors.red,),
+                        ImageIcon(const AssetImage(direction),size: 30.r,color: Colors.red,),
                         Text("Wind Direction", style: smallText,),
                         Text("$windDir",style: smallText2),
                       ],
@@ -110,7 +110,7 @@ class CenterContainer extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ImageIcon(AssetImage(gustIcon),size: 30.r),
+                        ImageIcon(const AssetImage(gustIcon),size: 30.r),
                         Text("Gust", style: smallText,),
                         Text("$gust Km/H",style: smallText2),
                       ],
